@@ -1,1 +1,1167 @@
-# therabybarbershop
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE RABY | Premium Barber Shop</title>
+
+<link rel="icon" type="image/x-icon" href="favicon.jpg">
+
+<style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+:root {
+    --gold: #d4a84f;
+    --black: #e24e4e;
+    --dark: #6197d2;
+    --gray: #222;
+}
+
+body {
+    background: var(--black);
+    color: white;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+
+header {
+    background: #080808;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.85)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    padding: 8%;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 80px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #111;
+    padding: 16px 30px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+
+section {
+    padding: 85px 8%;
+    scroll-margin-top: 90px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: var(--gold);
+}
+
+.section-title p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* SERVICES */
+
+.services {
+    background: #151515;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: #222;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 3px solid var(--gold);
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    background: #2b2b2b;
+}
+
+.service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.service-card p {
+    color: #bbb;
+    line-height: 1.6;
+    min-height: 50px;
+}
+
+.price {
+    color: var(--gold);
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.service-card a {
+    display: inline-block;
+    color: #111;
+    background: var(--gold);
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ABOUT */
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.about-text h2 {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.about-text h2 span {
+    color: var(--gold);
+}
+
+.about-text p {
+    color: #bbb;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+/* BOOKING */
+
+.booking {
+    background: #151515;
+}
+
+.booking-container {
+    max-width: 650px;
+    width: 100%;
+    margin: auto;
+    padding: 35px;
+    background: #222;
+    border-top: 4px solid var(--gold);
+}
+
+.booking-container input,
+.booking-container select,
+.booking-container textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 18px;
+    background: #111;
+    color: white;
+    border: 1px solid #444;
+    outline: none;
+    border-radius: 3px;
+}
+
+.booking-container input:focus,
+.booking-container select:focus,
+.booking-container textarea:focus {
+    border-color: var(--gold);
+}
+
+.booking-container button {
+    width: 100%;
+    font-size: 16px;
+}
+
+#message {
+    text-align: center;
+    color: var(--gold);
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background: #101010;
+}
+
+.contact p {
+    color: #bbb;
+    margin: 20px 0;
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.contact span {
+    color: var(--gold);
+}
+
+/* FOOTER */
+
+footer {
+    background: #050505;
+    padding: 25px;
+    text-align: center;
+    color: #888;
+    border-top: 1px solid #292929;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* TABLET */
+
+@media (max-width: 1023px) {
+
+    header {
+        padding: 18px 4%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        padding: 18px 12px;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: 40px 6%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 14px 20px;
+        font-size: 13px;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card img {
+        height: 230px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        height: 250px;
+    }
+
+    .about-text h2 {
+        font-size: 29px;
+    }
+
+    .booking-container {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .booking-container input,
+    .booking-container select,
+    .booking-container textarea {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .booking-container button {
+        padding: 15px;
+    }
+
+    .contact p {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 20px 10px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        gap: 9px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .section-title h2 {
+        font-size: 23px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">THE RABY</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Haircuts</a>
+        <a href="#about">About</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            LOOK SHARP.<br>
+            <span>FEEL CONFIDENT.</span>
+        </h1>
+
+        <p>
+            Welcome to THE RABY BARBER SHOP.
+            Experience premium haircuts, expert barbers,
+            and modern styles made just for you.
+        </p>
+
+        <a href="#services" class="btn">
+            EXPLORE HAIRCUTS
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <h2>CHOOSE YOUR <span>HAIRCUT</span></h2>
+
+        <p>Find your style. Get your confidence.</p>
+
+    </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE RABY - Haircut Services</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+}
+
+/* SERVICE CARDS */
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-card {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #d4a84f;
+}
+
+.service-card > img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.service-card h3 {
+    color: #d4a84f;
+    margin-top: 15px;
+}
+
+.service-card p {
+    color: #ccc;
+    min-height: 40px;
+}
+
+.price {
+    color: #d4a84f;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* BUTTONS */
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.card-buttons a,
+.card-buttons button {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+}
+
+.sample-btn {
+    background: transparent;
+    color: #d4a84f;
+    border: 1px solid #d4a84f !important;
+}
+
+.sample-btn:hover {
+    background: #d4a84f;
+    color: black;
+}
+
+.book-btn {
+    background: #d4a84f;
+    color: black;
+}
+
+.book-btn:hover {
+    background: white;
+}
+
+/* SERVICE CONTAINER */
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    width: 100%;
+    overflow: hidden;
+}
+
+.service-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+
+
+.photo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+.photo-viewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.photo-viewer.active {
+    display: flex;
+}
+
+.photo-box {
+    background: #1c1c1c;
+    border: 1px solid #d4a84f;
+    border-radius: 12px;
+    padding: 20px;
+    width: 500px;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+    animation: popup 0.25s ease;
+}
+
+
+.photo-box img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.photo-box h3 {
+    color: #d4a84f;
+    margin-top: 15px;
+}
+
+.exit-btn {
+    display: block;
+    margin: 0 0 15px auto;
+    background: #d4a84f;
+    color: black;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.exit-btn:hover {
+    background: white;
+}
+
+/* BOOKING SECTION DEMO */
+#booking {
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 25px;
+    background: #1c1c1c;
+    border-radius: 10px;
+}
+
+#booking h2 {
+    color: #d4a84f;
+}
+
+#service {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align:center;color:#d4a84f;">OUR HAIRCUT SERVICES</h1>
+
+<div class="service-container">
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=85" alt="Classic haircut">
+
+        <h3>Classic Cut</h3>
+        <p>Clean and timeless haircut for everyday style.</p>
+        <div class="price">₱70</div>
+
+        <div class="card-buttons">
+            <button class="sample-btn" onclick="openPhoto('classiccut.jpg', 'Classic Cut')">
+                SAMPLE PHOTO
+            </button>
+
+            <a href="#booking" class="book-btn" onclick="chooseService('Classic Cut')">
+                BOOK NOW
+            </a>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=85" alt="Low fade haircut">
+
+        <h3>Low Fade</h3>
+        <p>A smooth fade starting near the ears.</p>
+        <div class="price">₱100</div>
+
+        <div class="card-buttons">
+            <button class="sample-btn" onclick="openPhoto('LowFade.webp', 'LowFade')">
+                SAMPLE PHOTO
+            </button>
+            <a href="#booking" class="book-btn" onclick="chooseService('Low Fade')">
+                BOOK NOW
+            </a>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=85" alt="Mid fade haircut">
+
+        <h3>Mid Fade</h3>
+        <p>A stylish fade with a balanced blend.</p>
+        <div class="price">₱100</div>
+
+        <div class="card-buttons">
+            <button class="sample-btn" onclick="openPhoto('mid fade.webp', 'Mid Fade')">
+                SAMPLE PHOTO
+            </button>
+            <a href="#booking" class="book-btn" onclick="chooseService('Mid Fade')">
+                BOOK NOW
+            </a>
+        </div>
+    </div>
+
+    <!-- HIGH FADE -->
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=700&q-85" alt="High fade haircut">
+
+        <h3>High Fade</h3>
+        <p>A bold and sharp high fade haircut.</p>
+        <div class="price">₱150</div>
+
+        <div class="card-buttons">
+            <button class="sample-btn" onclick="openPhoto('High Fade.webp', 'High Fade')">
+                SAMPLE PHOTO
+            </button>
+            <a href="#booking" class="book-btn" onclick="chooseService('High Fade')">
+                BOOK NOW
+            </a>
+        </div>
+    </div>
+
+    <!-- SKIN FADE -->
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q-85" alt="Skin fade haircut">
+
+        <h3>Skin Fade</h3>
+        <p>Sharp skin fade with detailed blending.</p>
+        <div class="price">₱150</div>
+
+        <div class="card-buttons">
+            <button class="sample-btn" onclick="openPhoto('Skin Fade.webp', 'Skin Fade')">
+                SAMPLE PHOTO
+            </button>
+            <a href="#booking" class="book-btn" onclick="chooseService('Skin Fade')">
+                BOOK NOW
+            </a>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=700&q-85" alt="Buzz cut">
+
+        <h3>Buzz Cut</h3>
+        <p>Short, clean and easy-to-maintain haircut.</p>
+        <div class="price">₱120</div>
+
+        <div class="card-buttons">
+            <button class="sample-btn" onclick="openPhoto('Buzz Cut.webp', 'Buzz Cut')">
+                SAMPLE PHOTO
+            </button>
+            <a href="#booking" class="book-btn" onclick="chooseService('Buzz Cut')">
+                BOOK NOW
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div id="photoViewer" class="photo-viewer" onclick="closeBackdrop(event)">
+    <div class="photo-box">
+
+        <button class="exit-btn" onclick="closePhoto()">
+            EXIT ✕
+        </button>
+
+        <img id="sampleImage" src="" alt="Haircut sample photo">
+
+        <h3 id="photoTitle">Classic Cut Sample</h3>
+
+    </div>
+</div>
+
+<script>
+function openPhoto(photo, title) {
+    const viewer = document.getElementById("photoViewer");
+    const image = document.getElementById("sampleImage");
+
+    image.src = photo;
+    document.getElementById("photoTitle").textContent = title + " Sample";
+
+    viewer.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closePhoto() {
+    const viewer = document.getElementById("photoViewer");
+
+    viewer.classList.remove("active");
+    document.getElementById("sampleImage").src = "";
+
+    document.body.style.overflow = "auto";
+}
+
+function closeBackdrop(event) {
+    if (event.target.id === "photoViewer") {
+        closePhoto();
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closePhoto();
+    }
+});
+
+function chooseService(service) {
+    const select = document.getElementById("service");
+
+    if (select) {
+        select.value = service;
+    }
+}
+</script>
+
+</body>
+</html>
+
+</section>
+
+
+
+<section id="about">
+
+    <div class="about-container">
+
+        <div class="about-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85"
+            alt="Professional barber shop">
+
+        </div>
+
+
+        <div class="about-text">
+
+            <h2>ABOUT <span>THE RABY</span></h2>
+
+            <p>
+                Welcome to THE RABY BARBER SHOP,
+                where style meets craftsmanship.
+                We believe every gentleman deserves
+                a fresh look and a great grooming experience.
+            </p>
+
+            <p>
+                Our barbers combine modern techniques
+                with traditional barbering to deliver
+                clean cuts, fresh fades and timeless styles.
+            </p>
+
+            <p>
+                Your style is our passion.
+                Your confidence is our goal.
+            </p>
+
+            <a href="#booking" class="btn">BOOK YOUR CUT</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="booking" id="booking">
+
+    <div class="section-title">
+
+        <h2>BOOK AN <span>APPOINTMENT</span></h2>
+
+        <p>Choose your haircut and preferred schedule.</p>
+
+    </div>
+
+
+    <div class="booking-container">
+
+        <form id="bookingForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+                maxlength="100"
+                required>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                maxlength="20"
+                required>
+
+            <select id="service" required>
+
+                <option value="">Select Your Haircut</option>
+
+                <option value="Classic Cut">Classic Cut - ₱70</option>
+
+                <option value="Low Fade">Low Fade - ₱100</option>
+
+                <option value="Mid Fade">Mid Fade - ₱100</option>
+
+                <option value="High Fade">High Fade - ₱150</option>
+
+                <option value="Skin Fade">Skin Fade - ₱150</option>
+
+                <option value="Buzz Cut">Buzz Cut - ₱120</option>
+
+            </select>
+
+
+            <input
+                type="date"
+                id="date"
+                required>
+
+
+            <input
+                type="time"
+                id="time"
+                required>
+
+
+            <textarea
+                id="notes"
+                rows="4"
+                maxlength="500"
+                placeholder="Additional Notes (Optional)"></textarea>
+
+
+            <button type="submit" class="btn">
+                CONFIRM BOOKING
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>VISIT <span>OUR SHOP</span></h2>
+
+        <p>We are ready to give you a fresh new look.</p>
+
+    </div>
+
+<p>
+    📍 <span>Address:</span>
+    <a href="https://maps.app.goo.gl/ghcjs5u32g9ptWC86"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="address-link">
+       Bonifacio and M.H. del Pilar Street, San Julian, Irosin, Sorsogon
+    </a>
+</p>
+
+    <p>📞 <span>Phone:</span> +63 9933059092</p>
+
+    <p>🕒 <span>Monday - Saturday:</span> 7:30 AM - 5:00 PM</p>
+
+    <p>🕒 <span>Sunday:</span> 9:00 AM - 5:00 PM</p>
+
+    <p>📧 <span>Email:</span> dreuraby@gmail.com</p>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        © 2026 <span>THE RABY BARBER SHOP</span>.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+const form = document.getElementById("bookingForm");
+
+const dateInput = document.getElementById("date");
+
+
+
+function getLocalDate() {
+
+    const today = new Date();
+
+    const offset = today.getTimezoneOffset();
+
+    return new Date(today.getTime() - offset * 60000)
+        .toISOString().split("T")[0];
+
+}
+
+dateInput.min = getLocalDate();
+
+
+
+function chooseService(service) {
+
+    document.getElementById("service").value = service;
+
+}
+
+
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    const phone = document.getElementById("phone").value.trim();
+
+    const service = document.getElementById("service").value;
+
+    const date = dateInput.value;
+
+    const time = document.getElementById("time").value;
+
+    const notes = document.getElementById("notes").value.trim();
+
+    const message = document.getElementById("message");
+
+
+
+    if (date < getLocalDate()) {
+
+        message.textContent = "Please choose a valid future date.";
+
+        return;
+
+    }
+
+
+    /* SUCCESS MESSAGE */
+
+    message.textContent =
+        "Thank you, " + name +
+        "! Your booking request has been received. " +
+        "Haircut: " + service +
+        ". Date: " + date +
+        ". Time: " + time +
+        ". Phone: " + phone +
+        ". Please contact the shop to confirm your appointment.";
+
+
+    form.reset();
+
+    dateInput.min = getLocalDate();
+
+});
+
+</script>
+
+</body>
+</html>
